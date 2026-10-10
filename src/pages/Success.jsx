@@ -62,7 +62,7 @@ const Success = () => {
                 <img src="/logo.png" alt="Logo" className="h-10 w-10 object-contain" />
               </div>
               <div>
-                <h3 className="font-bold text-lg text-white tracking-wide leading-tight">KOSHI AMRIT</h3>
+                <h3 className="font-bold text-lg text-white tracking-wide leading-tight">KOSHIAMRIT KRISHI</h3>
                 <p className="text-[9px] text-green-200 uppercase font-semibold tracking-widest">Producer Company Limited</p>
               </div>
             </div>
@@ -78,10 +78,14 @@ const Success = () => {
               <img src="/logo.png" alt="watermark" className="h-40 w-auto grayscale" />
             </div>
 
-            {/* Photo Placeholder */}
+            {/* Photo */}
             <div className="flex flex-col items-center gap-2 z-10 w-24 flex-shrink-0">
-              <div className="w-20 h-24 bg-gray-100 border border-gray-300 rounded overflow-hidden flex items-center justify-center text-gray-400 shadow-inner">
-                <User size={40} strokeWidth={1.5} />
+              <div className="w-20 h-24 bg-gray-100 border border-gray-300 rounded overflow-hidden flex items-center justify-center text-gray-400 shadow-inner relative">
+                {farmer.live_photo ? (
+                  <img src={farmer.live_photo} alt="Farmer" className="w-full h-full object-cover" />
+                ) : (
+                  <User size={40} strokeWidth={1.5} />
+                )}
               </div>
               <div className="bg-brand-accent text-brand-green text-[10px] font-bold px-2 py-1 rounded w-full text-center shadow-sm">
                 AUTHORIZED

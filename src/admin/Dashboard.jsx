@@ -14,7 +14,11 @@ const Dashboard = () => {
       navigate('/admin');
       return;
     }
-    setFarmers(getFarmers().sort((a, b) => new Date(b.created_at) - new Date(a.created_at)));
+    const fetchData = async () => {
+      const data = await getFarmers();
+      setFarmers(data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)));
+    };
+    fetchData();
   }, [navigate]);
 
   const handleLogout = () => {

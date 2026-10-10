@@ -13,10 +13,13 @@ const FarmerDetails = () => {
       navigate('/admin');
       return;
     }
-    const foundFarmer = getFarmerById(id);
-    if (foundFarmer) {
-      setFarmer(foundFarmer);
-    }
+    const fetchFarmer = async () => {
+      const foundFarmer = await getFarmerById(id);
+      if (foundFarmer) {
+        setFarmer(foundFarmer);
+      }
+    };
+    fetchFarmer();
   }, [id, navigate]);
 
   const handleLogout = () => {
